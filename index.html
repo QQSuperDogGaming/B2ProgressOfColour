@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Progress Of Colour</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="mood-select">
+      <label for="mood">Select your mood:</label>
+      <select id="mood">
+        <option value="calm">Calm</option>
+        <option value="angry">Angry</option>
+        <option value="inspired">Inspired</option>
+        <option value="numb">Numb</option>
+        <option value="grateful">Grateful</option>
+        <option value="peaceful">Peaceful</option>
+        <option value="joyful">Joyful</option>
+        <option value="hopeful">Hopeful</option>
+        <option value="curious">Curious</option>
+        <option value="loving">Loving</option>
+        <option value="empowered">Empowered</option>
+        <option value="playful">Playful</option>
+      </select>
+      <button onclick="startExperience()">Start</button>
+    </div>
+
+    <div id="ar-container">
+      <a-scene embedded vr-mode-ui="enabled: false">
+        <a-entity id="mood-object" position="0 0 0" visible="false"></a-entity>
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-camera position="0 1.6 0"></a-camera>
+      </a-scene>
+    </div>
+  </body>
+</html>
