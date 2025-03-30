@@ -1,0 +1,34 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+#mood-select {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#ar-container canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
+#ar-container.filtered-calm        canvas { filter: hue-rotate(180deg) brightness(1.1); }
+#ar-container.filtered-angry       canvas { filter: hue-rotate(0deg) contrast(1.3); }
+#ar-container.filtered-joyful      canvas { filter: saturate(1.8) brightness(1.2); }
+#ar-container.filtered-numb        canvas { filter: grayscale(1) brightness(0.6); }
+#ar-container.filtered-grateful    canvas { filter: sepia(0.3) saturate(1.3); }
+#ar-container.filtered-peaceful    canvas { filter: hue-rotate(240deg) brightness(1.1); }
+#ar-container.filtered-inspired    canvas { filter: hue-rotate(300deg) contrast(1.2); }
+#ar-container.filtered-hopeful     canvas { filter: brightness(1.2) saturate(1.5); }
+#ar-container.filtered-curious     canvas { filter: hue-rotate(90deg) saturate(1.4); }
+#ar-container.filtered-loving      canvas { filter: hue-rotate(320deg) brightness(1.3); }
+#ar-container.filtered-empowered   canvas { filter: contrast(1.4) brightness(1.1); }
+#ar-container.filtered-playful     canvas { filter: saturate(2) hue-rotate(360deg); }
