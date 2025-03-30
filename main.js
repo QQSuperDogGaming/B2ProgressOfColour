@@ -1,27 +1,26 @@
-function startExperience() {
-  const mood = document.getElementById('mood').value;
+function startExperience(mood) {
   const moodEntity = document.getElementById('mood-object');
   const arContainer = document.getElementById('ar-container');
   moodEntity.setAttribute('visible', 'true');
 
-  // Clear previous content
+  // Remove all previous content
   while (moodEntity.firstChild) {
     moodEntity.removeChild(moodEntity.firstChild);
   }
 
-  // Apply CSS visual filter
+  // Apply CSS filter
   arContainer.className = 'filtered-' + mood;
 
-  // Add a translucent mood-colored sky
+  // Sky tint sphere
   const filterColor = getMoodColor(mood);
   const sky = document.createElement('a-sphere');
   sky.setAttribute('radius', '5');
   sky.setAttribute('color', filterColor);
   sky.setAttribute('opacity', '0.2');
-  sky.setAttribute('side', 'back'); // shows from inside
+  sky.setAttribute('side', 'back');
   moodEntity.appendChild(sky);
 
-  // Add a central shape
+  // Central animated object
   const center = document.createElement('a-box');
   center.setAttribute('color', filterColor);
   center.setAttribute('position', '0 1 -1');
@@ -31,7 +30,7 @@ function startExperience() {
   center.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 6000');
   moodEntity.appendChild(center);
 
-  // Add floating particles
+  // Floating particles
   const numParticles = 16;
   for (let i = 0; i < numParticles; i++) {
     const angle = (i / numParticles) * Math.PI * 2;
@@ -49,7 +48,6 @@ function startExperience() {
     moodEntity.appendChild(particle);
   }
 
-  // Hide mood selection UI
   document.getElementById('mood-select').style.display = 'none';
 }
 
