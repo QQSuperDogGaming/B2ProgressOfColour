@@ -13,6 +13,28 @@ body, html {
   background: rgba(255, 255, 255, 0.9);
   padding: 10px;
   border-radius: 8px;
+  max-width: 320px;
+}
+
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.mood-buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #eee;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.mood-buttons button:hover {
+  background-color: #ccc;
 }
 
 #ar-container canvas {
